@@ -8,7 +8,7 @@
 
 // JS Build In Method
 // Math
-
+let a =10;
 // let num = Math.random() * 6 + 1; // 4.5
 // num = Math.round(num);
 let pow = Math.pow(2, 5);
