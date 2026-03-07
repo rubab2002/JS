@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        height: 100vh;
+      }
+      h2 {
+        color: #000;
+        font-size: 10rem;
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hello I Am Light Theme</h2>
+    <button>Toogle Theme</button>
+
+    <script>
+      let h2 = document.querySelector("h2");
+      let btn = document.querySelector("button");
+
+      // Ek function bana lete hain taake same code bar bar na likhna pare
+      function applyTheme(theme) {
+        if (theme === "Light") {
+          document.body.style.backgroundColor = "white";
+          h2.textContent = "Hello I Am Light Theme";
+          h2.style.color = "black";
+        } else {
+          // Agar 'Dark' ya kuch aur ho toh Black theme apply ho
+          document.body.style.backgroundColor = "black";
+          h2.textContent = "Hello I Am Black Theme";
+          h2.style.color = "white";
+        }
+      }
+
+      // 1. Page Load hone par: Local storage se data nikal kar theme apply karein
+      // Agar pehli dafa load ho raha hai (null hai) toh default "Light" set karein
+      let savedTheme = localStorage.getItem("Theme") || "Light";
+      applyTheme(savedTheme);
+
+      // 2. Button Click hone par: Theme toggle karein
+      btn.addEventListener("click", () => {
+        // Current theme check karein
+        let currentTheme = localStorage.getItem("Theme") || "Light";
+
+        // Naya theme decide karein
+        let newTheme = currentTheme === "Light" ? "Dark" : "Light";
+
+        // Naya theme localStorage mein save karein
+        localStorage.setItem("Theme", newTheme);
+
+        // Naya theme foran screen par apply karein
+        applyTheme(newTheme);
+      });
+    </script>
+  </body>
+</html>
