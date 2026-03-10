@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* Hero Section */
+
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hero button:hover {
+  background: orange;
+  color: black;
+}
+
+/* About Section */
+
+#about {
+  padding: 40px;
+  text-align: center;
+}
+
+#about h2 {
+  margin-bottom: 15px;
+}
+
+/* Skills Section */
+
+#skills {
+  padding: 40px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skills-grid div {
+  background: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Contact Section */
+
+#contact {
+  padding: 40px;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+#contact h2 {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
